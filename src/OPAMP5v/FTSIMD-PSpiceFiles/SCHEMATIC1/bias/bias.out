@@ -1,0 +1,291 @@
+
+**** 03/21/18 11:23:21 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Google Drive\Homework\2017-18\Winter\ECEE421\final\finalv4\final\OPAMP5v\ftsimd-pspicefiles\sche
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.AC DEC 10 1 10000000000
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source FTSIMD
+M_M1         N14643 N14410 N14721 N14721 M2N7000
+X_M3         N14410 N14410 N14410 BS250/PLP
+M_M4         N14410 N14410 N14721 N14721 M2N7000
+X_M5         N14452 N14410 N14410 BS250/PLP
+M_M6         N14410 VINV N14643 N14643 M2N7000
+M_M7         N14452 0 N14643 N14643 M2N7000
+X_M8         MYLM325 N14452 N14410 BS250/PLP
+M_M10         MYLM325 N14410 N14721 N14721 M2N7000
+C_C1         MYLM325 N14452  150p  TC=0,0 
+V_V1         0 N14410 -5
+V_V2         0 N14721 5
+R_R14         N33035 VINV  5k TC=0,0 
+R_R13         MYLM325 VINV  5k TC=0,0 
+X_U1         0 N34520 N34438 N34524 VOUT_741 LM741
+V_Vpos1         N34438 0 15
+V_Vpos2         N34524 0 -15
+R_R15         N34520 VOUT_741  5k TC=0,0 
+R_R16         N348551 N34520  2.5k TC=0,0 
+V_V7         N348551 0 DC 0Vdc AC 1Vac 
+V_V9         N33035 0 DC 0Vdc AC 1Vac 
+
+**** RESUMING bias.cir ****
+.END
+
+**** 03/21/18 11:23:21 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Google Drive\Homework\2017-18\Winter\ECEE421\final\finalv4\final\OPAMP5v\ftsimd-pspicefiles\sche
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_M3.Dbody      X_M5.Dbody      X_M8.Dbody      X_U1.x_lm741.dx 
+          IS   75.320000E-15   75.320000E-15   75.320000E-15  800.000000E-18 
+           N    1.016           1.016           1.016                        
+          BV   45              45              45                            
+         IBV   10.000000E-06   10.000000E-06   10.000000E-06                 
+          RS    1.245           1.245           1.245           1            
+          TT   86.560000E-09   86.560000E-09   86.560000E-09                 
+         CJO   53.220000E-12   53.220000E-12   53.220000E-12                 
+          VJ     .5392           .5392           .5392                       
+           M     .3583           .3583           .3583                       
+
+
+               X_U1.x_lm741.dy 
+          IS  800.000000E-18 
+          RS    1.000000E-03 
+         CJO   10.000000E-12 
+
+
+**** 03/21/18 11:23:21 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Google Drive\Homework\2017-18\Winter\ECEE421\final\finalv4\final\OPAMP5v\ftsimd-pspicefiles\sche
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.x_lm741.qx 
+               NPN             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF   93.75         
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 03/21/18 11:23:21 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Google Drive\Homework\2017-18\Winter\ECEE421\final\finalv4\final\OPAMP5v\ftsimd-pspicefiles\sche
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               M2N7000         X_M3.MOST1      X_M3.MOST2      X_M5.MOST1      
+               NMOS            PMOS            PMOS            PMOS            
+       LEVEL    3               3               1               3            
+           L    2.000000E-06    2.000000E-06    2.000000E-06    2.000000E-06 
+           W     .12            7.600000E-03    7.600000E-03    7.600000E-03 
+         VTO    1.73           -2.3             2.43           -2.3          
+          KP    1.073000E-06   10.330000E-06   10.330000E-06   10.330000E-06 
+       GAMMA    0               0               0               0            
+         PHI     .6              .6              .6              .6          
+      LAMBDA    0               0               0               0            
+          RD     .5489          4.014                           4.014        
+          RS     .02             .02             .02             .02         
+          RG  546.2                                                          
+          RB    1.000000E-03                                                 
+         RDS   48.000000E+06                                                 
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+         CBD   74.460000E-12                                                 
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+        CGSO   73.610000E-12    0               0               0            
+        CGDO    6.487000E-12    0               0               0            
+        CGBO    0               0               0               0            
+         TOX    2.000000E-06  100.000000E-09    0             100.000000E-09 
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+       DELTA    0                                                            
+         ETA    0                                                            
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+               X_M5.MOST2      X_M8.MOST1      X_M8.MOST2      
+               PMOS            PMOS            PMOS            
+       LEVEL    1               3               1            
+           L    2.000000E-06    2.000000E-06    2.000000E-06 
+           W    7.600000E-03    7.600000E-03    7.600000E-03 
+         VTO    2.43           -2.3             2.43         
+          KP   10.330000E-06   10.330000E-06   10.330000E-06 
+       GAMMA    0               0               0            
+         PHI     .6              .6              .6          
+      LAMBDA    0               0               0            
+          RD                    4.014                        
+          RS     .02             .02             .02         
+          IS   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0            
+          PB     .8              .8              .8          
+        PBSW     .8              .8              .8          
+          CJ    0               0               0            
+        CJSW    0               0               0            
+        CGSO    0               0               0            
+        CGDO    0               0               0            
+        CGBO    0               0               0            
+         TOX    0             100.000000E-09    0            
+          XJ    0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1            
+         VFB    0               0               0            
+        LETA    0               0               0            
+        WETA    0               0               0            
+          U0    0               0               0            
+        TEMP    0               0               0            
+         VDD    5               5               5            
+       XPART    0               0               0            
+
+
+**** 03/21/18 11:23:21 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Google Drive\Homework\2017-18\Winter\ECEE421\final\finalv4\final\OPAMP5v\ftsimd-pspicefiles\sche
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+( VINV)   -1.3259  (N14410)    5.0000 (N14452)   -4.7677 (N14643)   -4.7677     
+
+(N14721)   -5.0000 (N33035)    0.0000 (N34438)   15.0000 (N34520) 19.25E-06     
+
+(N34524)  -15.0000 (X_M3.4)    5.0000 (X_M5.4)    2.5700 (X_M8.4)   -2.6518     
+
+(MYLM325)   -2.6518                   (N348551)    0.0000                       
+
+(VOUT_741) 456.6E-06                  (X_U1.x_lm741.6)-44.56E-09                
+
+(X_U1.x_lm741.7) 460.9E-06            (X_U1.x_lm741.8) 460.9E-06                
+
+(X_U1.x_lm741.9)    0.0000            (X_U1.x_lm741.10)    -.6077               
+
+(X_U1.x_lm741.11)   14.9600           (X_U1.x_lm741.12)   14.9600               
+
+(X_U1.x_lm741.13)    -.5938           (X_U1.x_lm741.14)    -.5938               
+
+(X_U1.x_lm741.53)   14.0000           (X_U1.x_lm741.54)  -14.0000               
+
+(X_U1.x_lm741.90) 87.46E-06           (X_U1.x_lm741.91)   40.0000               
+
+(X_U1.x_lm741.92)  -40.0000           (X_U1.x_lm741.99)    0.0000           
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         3.146E+00
+    V_V2        -3.146E+00
+    V_Vpos1     -1.667E-03
+    V_Vpos2      1.667E-03
+    V_V7         7.700E-09
+    V_V9        -2.652E-04
+    X_U1.x_lm741.vb  -4.456E-13
+    X_U1.x_lm741.vc   1.400E-11
+    X_U1.x_lm741.ve   1.592E-11
+    X_U1.x_lm741.vlim   8.746E-08
+    X_U1.x_lm741.vlp  -4.000E-11
+    X_U1.x_lm741.vln  -4.000E-11
+
+    TOTAL POWER DISSIPATION   3.15E+01  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 03/21/18 11:23:21 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Google Drive\Homework\2017-18\Winter\ECEE421\final\finalv4\final\OPAMP5v\ftsimd-pspicefiles\sche
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .06
+

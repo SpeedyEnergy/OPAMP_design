@@ -1,0 +1,166 @@
+
+**** 03/20/18 13:34:44 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-741"  [ c:\users\hl483\desktop\final\lm741-PSpiceFiles\SCHEMATIC1\741.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "741.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\hl483\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN V_V9 -10 10 0.1 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LM741
+Q_Q1         N14763 0 N143172 Q2N2222
+Q_Q2         N14763 VINV N144362 Q2N2222
+Q_Q7         N14771 N14737 N14714 Q2N2222
+Q_Q6         STAGE1OUT N14714 N144722 Q2N2222
+Q_Q5         N14737 N14714 N144902 Q2N2222
+Q_Q3         N14737 N14767 N143172 Q2N2907
+Q_Q4         STAGE1OUT N14767 N144362 Q2N2907
+R_R1         N14637 N144902  1k TC=0,0 
+R_R3         N14637 N14714  50k TC=0,0 
+R_R2         N14637 N144722  1k TC=0,0 
+Q_Q8         N14763 N14763 N14771 Q2N2907
+Q_Q9         N14767 N14763 N14771 Q2N2907
+Q_Q10         N14767 N20950 N149622 Q2N2222
+R_R4         N14637 N149622  5k TC=0,0 
+V_Vpos         N14771 0 15
+V_Vpneg         N14637 0 -15
+Q_Q11         N20950 N20950 N14637 Q2N2222
+R_R5         N20950 N21063  39k TC=0,0 
+Q_Q12         N21063 N21063 N14771 Q2N2907
+Q_Q13         N21320 N21063 N14771 Q2N2907
+Q_Q14         N14771 N21320 N21839 Q2N2222
+Q_Q15         N21320 N21839 VOUT_MY741 Q2N2222
+Q_Q16         N21320 N21649 VOUTSTAGE2 Q2N2222
+Q_Q17         VOUTSTAGE2 N21334 N21410 Q2N2222
+Q_Q18         VOUTSTAGE2 STAGE1OUT N21334 Q2N2222
+Q_Q19         STAGE1OUT N21410 N14637 Q2N2222
+R_R11         N14637 N21410  50 TC=0,0 
+R_R12         N14637 N21334  50k TC=0,0 
+C_C1         STAGE1OUT N21320  30p  TC=0,0 
+R_R8         N21649 VOUTSTAGE2  7.5k TC=0,0 
+R_R7         N21649 N21320  4.5k TC=0,0 
+Q_Q20         N14637 VOUTSTAGE2 N21885 Q2N2907
+R_R10         N21885 VOUT_MY741  50 TC=0,0 
+R_R9         VOUT_MY741 N21839  25 TC=0,0 
+R_Rin         N15217 VINV  2.5k TC=0,0 
+R_RF         VOUT_MY741 VINV  5k TC=0,0 
+X_U1         0 N24801 N25218 N25310 VOUT_741 LM741
+R_Rin1         N248211 N24801  2.5k TC=0,0 
+R_RF2         N24801 VOUT_741  5k TC=0,0 
+V_Vpos1         N25218 0 15
+V_Vpos2         N25310 0 -15
+V_V9         N15217 0 0Vdc
+V_V10         N248211 0 0Vdc
+
+**** RESUMING 741.cir ****
+.END
+
+**** 03/20/18 13:34:44 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-741"  [ c:\users\hl483\desktop\final\lm741-PSpiceFiles\SCHEMATIC1\741.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.x_lm741.dx X_U1.x_lm741.dy 
+          IS  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03 
+         CJO                   10.000000E-12 
+
+
+**** 03/20/18 13:34:44 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-741"  [ c:\users\hl483\desktop\final\lm741-PSpiceFiles\SCHEMATIC1\741.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q2N2222         Q2N2907         X_U1.x_lm741.qx 
+               NPN             PNP             NPN             
+       LEVEL    1               1               1            
+          IS   14.340000E-15  650.600000E-18  800.000000E-18 
+          BF  255.9           231.7            93.75         
+          NF    1               1               1            
+         VAF   74.03          115.7                          
+         IKF     .2847          1.079                        
+         ISE   14.340000E-15   54.810000E-15                 
+          NE    1.307           1.829                        
+          BR    6.092           3.563           1            
+          NR    1               1               1            
+         ISS    0               0               0            
+          RB   10              10                            
+          RE    0               0               0            
+          RC    1                .715           0            
+         CJE   22.010000E-12   19.820000E-12    0            
+         VJE     .75             .75             .75         
+         MJE     .377            .3357                       
+         CJC    7.306000E-12   14.760000E-12    0            
+         VJC     .75             .75             .75         
+         MJC     .3416           .5383           .33         
+        XCJC    1               1               1            
+         CJS    0               0               0            
+         VJS     .75             .75             .75         
+          TF  411.100000E-12  603.700000E-12                 
+         XTF    3               1.7                          
+         VTF    1.7             5                            
+         ITF     .6              .65                         
+          TR   46.910000E-09  111.300000E-09                 
+         XTB    1.5             1.5                          
+          KF    0               0               0            
+          AF    1               1               1            
+          CN    2.42            2.2             2.42         
+           D     .87             .52             .87         
+
+
+
+          JOB CONCLUDED
+
+**** 03/20/18 13:34:44 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-741"  [ c:\users\hl483\desktop\final\lm741-PSpiceFiles\SCHEMATIC1\741.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .02
+

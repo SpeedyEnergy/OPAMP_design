@@ -1,0 +1,64 @@
+
+**** 03/20/18 20:09:43 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\Users\hl483\Desktop\final\OPAMP5v\ftsimd-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\hl483\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 10 1 10000000000
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source FTSIMD
+M_M1         N14643 N14410 N14721 N14721 M2N7000
+X_M2         N14410 N14410 N14655 BS250/PLP
+X_M3         N14460 N14460 N14655 BS250/PLP
+M_M4         N14410 N14410 N14721 N14721 M2N7000
+X_M5         N14452 N14460 N14655 BS250/PLP
+M_M6         N14460 VINV N14643 N14643 M2N7000
+M_M7         N14452 0 N14643 N14643 M2N7000
+X_M8         MY LM324 N14452 N14655 BS250/PLP
+X_M9         MY LM324 N14452 N14655 BS250/PLP
+M_M10         MY LM324 N14410 N14721 N14721 M2N7000
+--------------------------------------------$
+ERROR(ORPSIM-16015): Unknown parameter.
+C_C1         MY LM324 N14452  150p  TC=0,0 
+V_V1         0 N14655 -5
+V_V2         0 N14721 5
+R_R14         N33035 VINV  2.5k TC=0,0 
+R_R13         MY LM324 VINV  5k TC=0,0 
+X_U1         0 N34520 N34438 N34524 VOUT_741 LM741
+V_Vpos1         N34438 0 15
+V_Vpos2         N34524 0 -15
+V_V6         N33035 0 DC 0Vdc AC 1Vac 
+R_R15         N34520 VOUT_741  5k TC=0,0 
+R_R16         N348551 N34520  2.5k TC=0,0 
+V_V7         N348551 0 DC 0Vdc AC 1Vac 
+C_C2         MY LM324 VINV  100p  TC=0,0 
+
+**** RESUMING bias.cir ****
+.END
+
+WARNING(ORPSIM-15220): Error in opening Alias File : C:\Users\hl483\Desktop\final\OPAMP5v\ftsimd-PSpiceFiles\SCHEMATIC1\SCHEMATIC1.als
+

@@ -1,0 +1,80 @@
+
+**** 03/20/18 13:57:08 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\users\hl483\desktop\final\lm741-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\hl483\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.OP
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LM741
+Q_Q1         N14763 VNON_INV N143172 Q2N2222
+Q_Q2         N14763 VINV N144362 Q2N2222
+Q_Q7         N14771 N14737 N14714 Q2N2222
+Q_Q6         STAGE1OUT N14714 N144722 Q2N2222
+Q_Q5         N14737 N14714 N144902 Q2N2222
+Q_Q3         N14737 N14767 N143172 Q2N2907
+Q_Q4         STAGE1OUT N14767 N144362 Q2N2907
+R_R1         N14637 N144902  1k TC=0,0 
+R_R3         N14637 N14714  50k TC=0,0 
+R_R2         N14637 N144722  1k TC=0,0 
+Q_Q8         N14763 N14763 N14771 Q2N2907
+Q_Q9         N14767 N14763 N14771 Q2N2907
+Q_Q10         N14767 N20950 N149622 Q2N2222
+R_R4         N14637 N149622  5k TC=0,0 
+V_Vpos         N14771 0 15
+V_Vpneg         N14637 0 -15
+Q_Q11         N20950 N20950 N14637 Q2N2222
+R_R5         N20950 N21063  39k TC=0,0 
+Q_Q12         N21063 N21063 N14771 Q2N2907
+Q_Q13         STAGE1OUT N21063 N14771 Q2N2907
+Q_Q14         N14771 STAGE1OUT N21839 Q2N2222
+Q_Q15         STAGE1OUT N21839 VOUT_MY741 Q2N2222
+Q_Q16         STAGE1OUT N21649 VOUTSTAGE2 Q2N2222
+Q_Q17         VOUTSTAGE2 N21334 N21410 Q2N2222
+Q_Q18         VOUTSTAGE2 STAGE1OUT N21334 Q2N2222
+Q_Q19         STAGE1OUT N21410 N14637 Q2N2222
+R_R11         N14637 N21410  50 TC=0,0 
+R_R12         N14637 N21334  50k TC=0,0 
+R_R8         N21649 VOUTSTAGE2  7.5k TC=0,0 
+R_R7         N21649 STAGE1OUT  4.5k TC=0,0 
+Q_Q20         N14637 VOUTSTAGE2 N21885 Q2N2907
+R_R10         N21885 VOUT_MY741  50 TC=0,0 
+R_R9         VOUT_MY741 N21839  25 TC=0,0 
+X_U1         0 N24801 N25218 N25310 VOUT_741 LM741
+R_Rin1         N248211 N24801  2.5k TC=0,0 
+R_RF2         N24801 VOUT_741  5k TC=0,0 
+V_Vpos1         N25218 0 15
+V_Vpos2         N25310 0 -15
+V_V10         N248211 0 0Vdc
+
+**** RESUMING bias.cir ****
+.END
+
+ERROR(ORPSIM-15141): Less than 2 connections at node VNON_INV.
+
+ERROR(ORPSIM-15141): Less than 2 connections at node VINV.
+

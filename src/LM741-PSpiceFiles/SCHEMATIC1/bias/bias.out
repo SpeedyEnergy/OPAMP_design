@@ -1,0 +1,237 @@
+
+**** 03/20/18 19:18:02 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\users\hl483\desktop\final\lm741-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\hl483\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1000us 200us 100n 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LM741
+Q_Q1         N14763 0 N143172 Q2N2222
+Q_Q2         N14763 VINV N144362 Q2N2222
+Q_Q7         N14771 N14737 N14714 Q2N2222
+Q_Q6         STAGE1OUT N14714 N144722 Q2N2222
+Q_Q5         N14737 N14714 N144902 Q2N2222
+Q_Q3         N14737 N14767 N143172 Q2N2907
+Q_Q4         STAGE1OUT N14767 N144362 Q2N2907
+R_R1         N14637 N144902  1k TC=0,0 
+R_R3         N14637 N14714  50k TC=0,0 
+R_R2         N14637 N144722  1k TC=0,0 
+Q_Q8         N14763 N14763 N14771 Q2N2907
+Q_Q9         N14767 N14763 N14771 Q2N2907
+Q_Q10         N14767 N20950 N149622 Q2N2222
+R_R4         N14637 N149622  5k TC=0,0 
+V_Vpos         N14771 0 15
+V_Vpneg         N14637 0 -15
+Q_Q11         N20950 N20950 N14637 Q2N2222
+R_R5         N20950 N21063  39k TC=0,0 
+Q_Q12         N21063 N21063 N14771 Q2N2907
+Q_Q13         N21320 N21063 N14771 Q2N2907
+Q_Q14         N14771 N21320 N21839 Q2N2222
+Q_Q15         N21320 N21839 VOUT_MY741 Q2N2222
+Q_Q16         N21320 N21649 VOUTSTAGE2 Q2N2222
+Q_Q17         VOUTSTAGE2 N21334 N21410 Q2N2222
+Q_Q18         VOUTSTAGE2 STAGE1OUT N21334 Q2N2222
+Q_Q19         STAGE1OUT N21410 N14637 Q2N2222
+R_R11         N14637 N21410  50 TC=0,0 
+R_R12         N14637 N21334  50k TC=0,0 
+R_R8         N21649 VOUTSTAGE2  7.5k TC=0,0 
+R_R7         N21649 N21320  4.5k TC=0,0 
+Q_Q20         N14637 VOUTSTAGE2 N21885 Q2N2907
+R_R10         N21885 VOUT_MY741  50 TC=0,0 
+R_R9         VOUT_MY741 N21839  25 TC=0,0 
+X_U1         N24801 N24801 N25218 N25310 VOUT_741 LM741
+V_Vpos1         N25218 0 15
+V_Vpos2         N25310 0 -15
+C_C1         STAGE1OUT N21320  30p  TC=0,0 
+V_V1         N32882 0  
++SIN 0 1 5000 0 0 0
+V_V2         N24801 0  
++SIN 0 1 5000 0 0 0
+R_R13         VOUT_MY741 VINV  1k TC=0,0 
+R_R14         N32882 VINV  1k TC=0,0 
+
+**** RESUMING bias.cir ****
+.END
+
+**** 03/20/18 19:18:02 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\users\hl483\desktop\final\lm741-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.x_lm741.dx X_U1.x_lm741.dy 
+          IS  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03 
+         CJO                   10.000000E-12 
+
+
+**** 03/20/18 19:18:02 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\users\hl483\desktop\final\lm741-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q2N2222         Q2N2907         X_U1.x_lm741.qx 
+               NPN             PNP             NPN             
+       LEVEL    1               1               1            
+          IS   14.340000E-15  650.600000E-18  800.000000E-18 
+          BF  255.9           231.7            93.75         
+          NF    1               1               1            
+         VAF   74.03          115.7                          
+         IKF     .2847          1.079                        
+         ISE   14.340000E-15   54.810000E-15                 
+          NE    1.307           1.829                        
+          BR    6.092           3.563           1            
+          NR    1               1               1            
+         ISS    0               0               0            
+          RB   10              10                            
+          RE    0               0               0            
+          RC    1                .715           0            
+         CJE   22.010000E-12   19.820000E-12    0            
+         VJE     .75             .75             .75         
+         MJE     .377            .3357                       
+         CJC    7.306000E-12   14.760000E-12    0            
+         VJC     .75             .75             .75         
+         MJC     .3416           .5383           .33         
+        XCJC    1               1               1            
+         CJS    0               0               0            
+         VJS     .75             .75             .75         
+          TF  411.100000E-12  603.700000E-12                 
+         XTF    3               1.7                          
+         VTF    1.7             5                            
+         ITF     .6              .65                         
+          TR   46.910000E-09  111.300000E-09                 
+         XTB    1.5             1.5                          
+          KF    0               0               0            
+          AF    1               1               1            
+          CN    2.42            2.2             2.42         
+           D     .87             .52             .87         
+
+
+**** 03/20/18 19:18:02 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\users\hl483\desktop\final\lm741-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+( VINV) 577.1E-06  (N14637)  -15.0000 (N14714)  -14.4690 (N14737)  -13.9490     
+
+(N14763)   14.3800 (N14767)   -1.1182 (N14771)   15.0000 (N20950)  -14.3620     
+
+(N21063)   14.2820 (N21320)     .4859 (N21334)  -14.3240 (N21410)  -14.9600     
+
+(N21649)     .0808 (N21839)     .0013 (N21885)     .0012 (N24801)    0.0000     
+
+(N25218)   15.0000 (N25310)  -15.0000 (N32882)    0.0000 (N143172)    -.5181    
+
+(N144362)    -.5178                   (N144722)  -14.9910                       
+
+(N144902)  -14.9910                   (N149622)  -14.9020                       
+
+(VOUT_741)    3.8433                  (STAGE1OUT)  -13.7870                     
+
+(VOUTSTAGE2)    -.5566                (VOUT_MY741)     .0012                    
+
+(X_U1.x_lm741.6)-362.2E-06            (X_U1.x_lm741.7)    3.8433                
+
+(X_U1.x_lm741.8)    3.8433            (X_U1.x_lm741.9)    0.0000                
+
+(X_U1.x_lm741.10)    -.6077           (X_U1.x_lm741.11)   14.9600               
+
+(X_U1.x_lm741.12)   14.9600           (X_U1.x_lm741.13)    -.5938               
+
+(X_U1.x_lm741.14)    -.5938           (X_U1.x_lm741.53)   14.0000               
+
+(X_U1.x_lm741.54)  -14.0000           (X_U1.x_lm741.90) 24.40E-09               
+
+(X_U1.x_lm741.91)   40.0000           (X_U1.x_lm741.92)  -40.0000               
+
+(X_U1.x_lm741.99)    0.0000           
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vpos      -1.599E-03
+    V_Vpneg      1.598E-03
+    V_Vpos1     -1.667E-03
+    V_Vpos2      1.667E-03
+    V_V1         5.771E-07
+    V_V2        -1.594E-07
+    X_U1.x_lm741.vb  -3.622E-09
+    X_U1.x_lm741.vc   3.212E-11
+    X_U1.x_lm741.ve   5.672E-11
+    X_U1.x_lm741.vlim   2.440E-11
+    X_U1.x_lm741.vlp  -1.265E-10
+    X_U1.x_lm741.vln  -1.265E-10
+
+    TOTAL POWER DISSIPATION   9.80E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 03/20/18 19:18:02 ****** PSpice 17.2.0 (March 2016) ****** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\users\hl483\desktop\final\lm741-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .78
+

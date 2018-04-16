@@ -1,0 +1,4 @@
+ lib=C:\Cadence\SPB_17.2\tools\PSpice\Library\bipolar.lib, offset=13005, size=562
+ lib=C:\Cadence\SPB_17.2\tools\PSpice\Library\bipolar.lib, offset=102680, size=644
+ lib=C:\Cadence\SPB_17.2\tools\PSpice\Library\opamp.lib, offset=58704, size=430
+ lib=C:\Cadence\SPB_17.2\tools\PSpice\Library\opamp.lib, offset=101320, size=1093

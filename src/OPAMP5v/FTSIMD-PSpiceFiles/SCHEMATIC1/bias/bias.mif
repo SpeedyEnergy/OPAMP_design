@@ -1,0 +1,4 @@
+ lib="H:\Program Files\cadence\tools\PSpice\Library\pwrmos.lib", offset=15404, size=1711
+ lib="H:\Program Files\cadence\tools\PSpice\Library\phil_fet.lib", offset=45110, size=502
+ lib="H:\Program Files\cadence\tools\PSpice\Library\opamp.lib", offset=58704, size=430
+ lib="H:\Program Files\cadence\tools\PSpice\Library\opamp.lib", offset=101320, size=1093
